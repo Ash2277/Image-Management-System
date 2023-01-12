@@ -1,0 +1,40 @@
+{% extends 'mainapp/main.html' %} {% block content %}
+
+<br />
+{% include 'mainapp/status.html' %}
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Image Id</th>
+					<th>Image Name</th>
+					<th>Image Description</th>
+					<th>Date of Creation</th>
+					<th>Image</th>
+				</tr>
+				{% for i in images %}
+				<tr>
+					<td>{{i.id}}</td>
+					<td>{{i.name}}</td>
+					<td>{{i.description}}</td>
+					<td>{{i.date_created}}</td>
+					<td>
+						<img
+							src="{{i.image.url}}"
+							alt="content"
+							style="max-height: 300px"
+						/>
+					</td>
+					<!-- <td>{{i.image}}</td> -->
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- <h3>User Profile</h3> -->
+
+{% endblock content %}

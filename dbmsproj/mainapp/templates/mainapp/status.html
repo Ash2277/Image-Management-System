@@ -1,0 +1,65 @@
+<br />
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id="total-orders">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">User</th>
+							<th scope="col">Name</th>
+							<th scope="col">Description</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							{% for i in images %}
+							<th scope="row">{{i.customer}}</th>
+							<td>{{i.name}}</td>
+							<td>{{i.description}}</td>
+							<td>
+								<a
+									class="btn btn-sm btn-danger"
+									href="{% url 'delete-order' i.id %}"
+									>Delete</a
+								>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<div class="card-body">
+					<h3 class="card-title"></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id="orders-delivered">
+				<div class="card-header">
+					<h5 class="card-title">Total Images Uploaded</h5>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title"></h3>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<!-- <div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id="orders-pending">
+				<div class="card-header">
+					<h5 class="card-title">Orders Pending</h5>
+				</div>
+				<div class="card-body">
+					<h3 class="card-title"></h3>
+				</div>
+			</div>
+		</div>
+	</div> -->
+</div>

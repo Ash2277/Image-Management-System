@@ -1,0 +1,77 @@
+{% extends 'mainapp/main.html' %} {% block content %}
+
+<br />
+<h5>USERS:</h5>
+<br />
+<br />
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white mb-3" id="total-orders">
+				<table class="table">
+					<thead>
+						<tr>
+                            <th></th>
+							<th></th>
+							<th>User</th>
+							<!-- <th></th> -->
+							<th>Phone Number</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for i in customers %}
+						<tr>
+							</td>
+							<th></th>
+                            
+                            <!-- <td><a class="btn btn-sm btn-info "href="http://127.0.0.1:8000/customer/2/">View</a></td> -->
+                            <td><a class="btn btn-sm btn-info "href="{% url 'customer' i.id %}">View</a></td>
+							<td>{{i.name}}</td>
+							<td>{{i.phone}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<div class="card-body">
+					<h3 class="card-title"></h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="row" >
+	<div class="col-md-5">
+		
+		<hr />
+		<div class="card card-body">
+			
+			<table class="table table-sm">
+				<tr>
+					
+				</tr>
+				
+			</table>
+		</div>
+	</div> -->
+
+	<!-- <div class="col-md-7">
+		<h5>LAST 5 UPLOADS</h5>
+		<hr />
+		<div class="card card-body">
+			<a class="btn btn-primary btn-sm btn-block" href="">Add Image</a>
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+			</table>
+		</div>
+	</div> -->
+</div>
+<h5>IMAGES:</h5>
+<!-- <a class="btn btn-primary btn-sm btn-block" href="% url 'create_order'  %}">Add Image</a> -->
+<br>
+{% include 'mainapp/status.html' %} {% endblock %}
